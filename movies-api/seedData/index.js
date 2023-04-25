@@ -1,12 +1,12 @@
-import userModel from '../api/users/userModel';
-import users from './users';
-import dotenv from 'dotenv';
+import userModel from "../api/users/userModel";
+import users from "./users";
+import dotenv from "dotenv";
 
 dotenv.config();
 
 // deletes all user documents in collection and inserts test data
 async function loadUsers() {
-  console.log('load user Data');
+  console.log("load user Data");
   try {
     await userModel.deleteMany();
     await userModel.collection.insertMany(users);
@@ -18,4 +18,5 @@ async function loadUsers() {
 
 if (process.env.SEED_DB) {
   loadUsers();
+  loadGenres();
 }
