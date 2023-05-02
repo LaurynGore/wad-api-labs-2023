@@ -1,6 +1,7 @@
 import express from "express";
 import { genres } from "./genresData.js";
-import uniqid from "uniqid";
+import Genre from "./genreModel";
+//import uniqid from "uniqid";
 
 const router = express.Router();
 
